@@ -1,0 +1,70 @@
+{
+    "workbench.colorTheme": "Minimalist Theme",
+    "window.menuBarVisibility": "toggle",
+    "workbench.statusBar.visible": "false",
+    "liveServer.settings.donotShowInfoMsg": "true",
+    "editor.fontFamily": "'Operator Mono Medium', 'Fira Code', 'Courier New', monospace",
+    "editor.fontLigatures": "true",
+    "editor.fontSize": 15,
+
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            //following will be in italic (=FlottFlott)
+            "comment",
+            "entity.name.type.class", //class names
+            "keyword", //import, export, return…
+            "storage.modifier", //static keyword
+            "storage.type", //class keyword
+            "support.class.builtin",
+            "keyword.control",
+            "constant.language",
+            "entity.other.attribute-name",
+            "entity.name.method"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            //following will be excluded from italics (VSCode has some defaults for italics)
+            "invalid",
+            "keyword.operator",
+            "constant.numeric.css",
+            "keyword.other.unit.px.css",
+            "constant.numeric.decimal.js",
+            "constant.numeric.json"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    },
+
+    "workbench.colorCustomizations":
+    {
+        "[Minimalist Theme]": {}
+        "editor.background": "#0f0f0f"
+        "editor.foreground": "#f0f0f0",
+        "editorGutter.background": "#0f0f0f",
+        "editorGutter.foldingControlForeground": "#f0f0f0",
+        "sideBar.background": "#0f0f0f",
+        "sideBar.foreground": "#f0f0f0",
+        "activityBar.background": "#0f0f0f"
+        "activityBar.foreground": "#f0f0f0"
+        "statusBar.background": "#0f0f0f"
+        "editor.selectionBackground": "#262626"
+        "tab.activeBackground": "#1d1d1d"
+        "tab.inactiveBackground": "#0f0f0f"
+        "statusBar.noFolderBackground": "#0f0f0f"
+        "titleBar.activeForeground": "#f0f0f0"
+        "window.activeBorder": "#0f0f0f"
+        "window.inactiveBorder": "#0f0f0f"
+        "toolbar.activeBackground": "#0f0f0f"
+        "editorGroupHeader.tabsBackground": "#0f0f0f"
+    }
+
+}
