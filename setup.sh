@@ -14,20 +14,6 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     
     read -p "Which rice would you like to install? ("mountain" is the only option for now): " rice
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     rice=${rice,,}
     case $rice in
         mountain)
@@ -44,7 +30,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             cd /themes
             mkdir ~/.themes
             mv mountain ~/.themes
-            #calling function below
+            #changing to ly display manager
             display_manager=$(detect_display_manager)
             if $display_manager="unknown" || $display_manager="ly"
                 sudo systemctl enable ly
@@ -52,6 +38,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
                 sudo systemctl display $display_manager
                 sudo systemctl enable ly
             fi
+            
             echo "The script has been successful. Exiting..." | pv -qL 25
             exit 0
             ;;
@@ -68,7 +55,7 @@ fi
 
 #self explanitory, but this function detects the display manager present
 #if an obscure one is being used, it will be mistaken for not having one
-#however this is not really an issue as others, other than these are extremely uncommon
+#however this is not really an issue as display mangaers, other than these are extremely uncommon
 detect_display_manager() {
     local display_manager
     
