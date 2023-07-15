@@ -13,6 +13,21 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     
     
     read -p "Which rice would you like to install? ("mountain" is the only option for now): " rice
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     rice=${rice,,}
     case $rice in
         mountain)
@@ -29,23 +44,14 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             cd /themes
             mkdir ~/.themes
             mv mountain ~/.themes
-            #detecting the existing display manager, and adjusting accordingly
-            if pgrep -x "gdm" > /dev/null; then
-                sudo systemctl disable gdm
-            elif pgrep -x "lightdm" > /dev/null; then
-                sudo systemctl disable lightdm
-            elif pgrep -x "sddm" > /dev/null; then
-                sudo systemctl disable sddm
-            elif pgrep -x "xdm" > /dev/null; then
-                sudo systemctl disable xdm
-            elif pgrep -x "ly" > /dev/null; then
-                echo "Great, you're already using the ly display manager! The setup is complete!" | pv -qL 25
-                sleep 5
-                exit 0
-            else
-                echo "You are either not using a display manager, or using an obscure one, we will try to just enable ly."
+            #calling function below
+            display_manager=$(detect_display_manager)
+            if $display_manager="unknown" || $display_manager="ly"
+                sudo systemctl enable ly
+            else                
+                sudo systemctl display $display_manager
+                sudo systemctl enable ly
             fi
-            sudo systemctl enable ly
             echo "The script has been successful. Exiting..." | pv -qL 25
             exit 0
             ;;
@@ -59,3 +65,28 @@ else
     echo "Exiting..."
     exit 0
 fi
+
+#self explanitory, but this function detects the display manager present
+#if an obscure one is being used, it will be mistaken for not having one
+#however this is not really an issue as others, other than these are extremely uncommon
+detect_display_manager() {
+    local display_manager
+    
+    if pgrep -x "gdm" > /dev/null; then
+        display_manager="gdm"
+    elif pgrep -x "lightdm" > /dev/null; then
+        display_manager="lightdm"
+    elif pgrep -x "sddm" > /dev/null; then
+        display_manager="sddm"
+    elif pgrep -x "xdm" > /dev/null; then
+        display_manager="xdm"
+    elif pgrep -x "ly" > /dev/null; then
+        display_manager="ly"
+    elif pgrep -x "lxdm" > /dev/null; then
+        display_manager="lxdm"
+    else
+        display_manager="unknown"
+    fi
+    
+    echo $display_manager
+}
