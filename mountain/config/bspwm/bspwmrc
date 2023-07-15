@@ -2,7 +2,7 @@
 
 #pgrep -x sxhkd > /dev/null || sxhkd &
 sxhkd &
-polybar tokyo-night &
+polybar mountain &
 nitrogen --restore &
 picom &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
