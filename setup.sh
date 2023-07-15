@@ -19,7 +19,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
         mountain)
             echo "Ah, so you have chosen minimalism..." | pv -qL 25
             #installing my disired packages
-            yay -S bspwm sxhkd rofi polybar dunst kitty mate-polkit nitrogen vscodium-bin neovim htop rofi-screenshot-git ttf-nerd-fonts-symbols-common ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-kascadia cantarell-fonts  noto-fonts-emoji ttf-dejavu siji-ttf ly ttf-unifont otf-unifont thunar lxappearance rofi-calc rofi-emoji zip unzip
+            yay -S bspwm sxhkd rofi polybar dunst kitty fish mate-polkit nitrogen vscodium-bin neovim htop rofi-screenshot-git ttf-nerd-fonts-symbols-common ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-kascadia cantarell-fonts  noto-fonts-emoji ttf-dejavu siji-ttf ly ttf-unifont otf-unifont thunar lxappearance rofi-calc rofi-emoji zip unzip
             #moving config files and fonts to correct directories
             cd ~/dots/mountain
             mv config .config
@@ -38,7 +38,9 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
                 sudo systemctl display $display_manager
                 sudo systemctl enable ly
             fi
-            
+            #making fish default shell
+            echo "Making fish the default shell." | pv -qL 25
+            chsh -s /bin/fish
             echo "The script has been successful. Exiting..." | pv -qL 25
             exit 0
             ;;
