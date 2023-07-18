@@ -17,9 +17,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     rice=${rice,,}
     case $rice in
         mountain)
-            echo "Ah, so you have chosen minimalism..." | pv -qL 25
-            #installing my disired packages
-            yay -S bspwm sxhkd rofi polybar dunst kitty fish mate-polkit nitrogen vscodium-bin neovim htop ly rofi-screenshot-git thunar lxappearance rofi-calc rofi-emoji zip unzip ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-dejavu siji-ttf  ttf-unifont otf-unifont 
+            echo "Ah, so you have chosen minimalism..." | pv -qL 25 
             #moving config files and fonts to correct directories
             cd ~/dots/mountain
             mv config .config
@@ -30,6 +28,10 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             cd /themes
             mkdir ~/.themes
             mv mountain ~/.themes
+            
+            #installing my disired packages
+            yay -S bspwm sxhkd rofi polybar dunst kitty fish mate-polkit nitrogen vscodium-bin neovim htop ly rofi-screenshot-git thunar lxappearance rofi-calc rofi-emoji zip unzip ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-dejavu siji-ttf  ttf-unifont otf-unifont    
+            
             #changing to ly display manager
             display_manager=$(detect_display_manager)
             if [[ $display_manager="unknown" || $display_manager="ly" ]]; then
