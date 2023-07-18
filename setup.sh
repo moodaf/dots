@@ -23,7 +23,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             cd ~/dots/mountain
             me=$(whoami)
             mkdir /home/$me/.config/
-            mv -f config/* /home/$me/.config
+            mv -f config/* /home/$me/.config/
             mv -f fonts/* /home/$me/.local/share/fonts/
             unzip themes.zip
             cd /themes
