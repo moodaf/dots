@@ -18,6 +18,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     case $rice in
         mountain)
             echo "Ah, so you have chosen minimalism..." | pv -qL 25 
+            
             #moving config files and fonts to correct directories
             cd ~/dots/mountain
             mv config .config
