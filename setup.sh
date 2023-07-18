@@ -32,7 +32,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             mv mountain ~/.themes
             #changing to ly display manager
             display_manager=$(detect_display_manager)
-            if $display_manager="unknown" || $display_manager="ly"
+            if [[ $display_manager="unknown" || $display_manager="ly" ]]; then
                 sudo systemctl enable ly
             else                
                 sudo systemctl display $display_manager
