@@ -5,9 +5,11 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     echo "Proceeding..."  | pv -qL 25
     
     echo "Installing dependencies" | pv -qL 25
+    sleep 3
     sudo pacman -S --needed git base-devel
     
     echo "Installing yay aur helper" | pv -qL 25
+    sleep 3
     cd
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
     
@@ -17,7 +19,8 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     rice=${rice,,}
     case $rice in
         mountain)
-            echo "Ah, so you have chosen minimalism..." | pv -qL 25 
+            echo "Ah, so you have chosen minimalism..." | pv -qL 25
+            sleep 3
             
             #moving config files and fonts to correct directories
             cd ~/dots/mountain
@@ -43,6 +46,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             fi
             #making fish default shell
             echo "Making fish the default shell." | pv -qL 25
+            sleep 3
             chsh -s /bin/fish
             echo "The script has been successful. Exiting..." | pv -qL 25
             exit 0
