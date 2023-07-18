@@ -21,13 +21,13 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             
             #moving config files and fonts to correct directories
             cd ~/dots/mountain
-            mv config .config
             me=$(whoami)
-            mv -f .config /home/$me
-            mv -f fonts /home/$me/.local/share/fonts/
+            mkdir /home/$me/.config/
+            mv -f config/* /home/$me/.config
+            mv -f fonts/* /home/$me/.local/share/fonts/
             unzip themes.zip
             cd /themes
-            mkdir ~/.themes
+            mkdir /home/alex/$me/.themes
             mv mountain ~/.themes
             
             #installing my disired packages
