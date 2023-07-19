@@ -65,9 +65,7 @@ else
     exit 0
 fi
 
-#self explanitory, but this function detects the display manager present
-#if an obscure one is being used, it will be mistaken for not having one
-#however this is not really an issue as display mangaers, other than these are extremely uncommon
+#function detects the display manager present, obscure ones will be mistaken for not existing, however this is not really an issue as ones, other than these are extremely uncommon
 detect_display_manager() {
     local display_manager
     
