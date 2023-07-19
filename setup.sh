@@ -14,14 +14,11 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
     
     
-    read -p "Which rice would you like to install? ("mountain" is the only option for now): " rice
+    read -p "Which configuration would you like to install? ("mountain" is the only option for now): " rice
     
-    rice=${rice,,}
+    configuration=${configuration,,}
     case $rice in
         mountain)
-            echo "Ah, so you have chosen minimalism..." | pv -qL 25
-            sleep 3
-            
             #moving config files and fonts to correct directories
             cd ~/dots/mountain
             me=$(whoami)
@@ -55,7 +52,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             exit 0
             ;;
         *)
-            echo "You have not chosen a valid rice."
+            echo "You have not chosen a valid configuration."
             echo "Exiting..."
             sleep 3
             exit 0
