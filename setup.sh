@@ -33,6 +33,9 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             mkdir /home/alex/$me/.themes
             mv mountain ~/.themes
             
+            #bspwm requires that the "bspwm" be executable for it to work properly (otherwise a black screen is rendered)
+            chmod +x /home/$me/.config/bspwm/bpsmwrc
+            
             #installing my disired packages
             yay -S bspwm sxhkd rofi polybar dunst kitty fish mate-polkit nitrogen vscodium-bin neovim htop ly rofi-screenshot-git thunar lxappearance rofi-calc rofi-emoji zip unzip ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-dejavu siji-ttf  ttf-unifont otf-unifont    
             
