@@ -34,7 +34,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             chmod +x /home/$me/.config/bspwm/bpsmwrc
             
             #installing my disired packages
-            yay -S bspwm sxhkd rofi polybar dunst kitty fish mate-polkit nitrogen vscodium-bin neovim htop ly rofi-screenshot-git thunar lxappearance rofi-calc rofi-emoji zip unzip ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-dejavu siji-ttf  ttf-unifont otf-unifont    
+            yay -S bspwm sxhkd rofi polybar dunst picom kitty fish mate-polkit nitrogen vscodium-bin neovim htop ly rofi-screenshot-git thunar lxappearance rofi-calc rofi-emoji zip unzip ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-dejavu siji-ttf  ttf-unifont otf-unifont    
             
             #changing to ly display manager
             display_manager=$(detect_display_manager)
