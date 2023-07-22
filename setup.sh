@@ -36,11 +36,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             read -p "Do you want to reboot now? (y/n): " yesorno
             if [[ $yesorno == "y" || $yesorno == "Y" ]]; then
                 reboot
-            else
-                exit 0
             fi
-
-            
             exit 0
             ;;
         dynamic)            
@@ -58,10 +54,9 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             echo "These changes will have an effect after a reboot."
             read -p "Do you want to reboot now? (y/n): " yesorno
             if [[ $yesorno == "y" || $yesorno == "Y" ]]; then
-                reboot
-            else
-                exit 0
+                reboot  
             fi
+            exit 0
             ;;
         *)
             echo "You have not chosen a valid configuration. Exiting..."
