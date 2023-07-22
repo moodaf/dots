@@ -62,12 +62,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             else
                 exit 0
             fi
-
-
-
-
-
-            
+            ;;
         *)
             echo "You have not chosen a valid configuration. Exiting..."
             sleep 3
