@@ -12,13 +12,12 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     sleep 3
     cd
     git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-    
-    
-    read -p "Which configuration would you like to install? (mountain/dynamic): " config
+    cd
     
     #stores name of user
     me=$(whoami)
     
+    read -p "Which configuration would you like to install? (mountain/dynamic): " config
     case $config in
         mountain)
             move_config_font_files mountain
@@ -41,6 +40,8 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
             ;;
         dynamic)            
             move_config_font_files dynamic
+            mkdir ~/.scripts
+            mv /scripts/* ~/.scripts/
             #installing required packages
             yay -S bspwm sxhkd rofi polybar dunst picom-jonaburg-git kitty fish mate-polkit nitrogen neovim htop ly rofi-screenshot-git thunar lxappearance rofi-calc rofi-emoji zip unzip ttf-noto-nerd otf-firamono-nerd ttf-jetbrains-mono-nerd ttf-dejavu siji-ttf  ttf-unifont otf-unifont
             yay -S python-pywal python-pywalfox pywal-discord-git
