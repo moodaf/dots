@@ -11,7 +11,7 @@ if [[ $choice == "y" || $choice == "Y" ]]; then
     echo "Installing yay aur helper"
     sleep 3
     cd
-    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+    git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
     
     
     read -p "Which configuration would you like to install? (mountain/dynamic): " config
